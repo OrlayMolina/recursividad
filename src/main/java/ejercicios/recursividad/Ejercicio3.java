@@ -11,9 +11,13 @@ public class Ejercicio3 {
     }
 
     public static int sumaMatriz(int[][] matriz, int fila, int columna) {
-        if (fila < 0 || fila >= matriz.length || columna < 0 || columna >= matriz[fila].length) {
+        if (fila < 0 || columna < 0) {
             return 0;
         }
-        return matriz[fila][columna] + sumaMatriz(matriz, fila, columna - 1) + sumaMatriz(matriz, fila - 1, 0);
+        int suma = matriz[fila][columna] + sumaMatriz(matriz, fila, columna - 1);
+        if (columna == 0) {
+            suma += sumaMatriz(matriz, fila - 1, matriz[0].length-1);
+        }
+        return suma;
     }
 }
