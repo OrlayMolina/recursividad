@@ -12,7 +12,7 @@ public class Ejercicio1 {
 
     public static int sumaDiagonal(int[][]matriz, int fila, int columna){
         if(fila <= matriz.length-1 && fila>=0)
-            if(columna <= matriz.length-1 && columna>=0)
+            if(columna <= matriz[fila].length-1 && columna>=0)
                 if(fila == columna){
                     return matriz[fila][columna] + sumaDiagonal(matriz, fila-1, columna-1);
                 }else {
